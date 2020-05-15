@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Customer} from '../models/customer';
 import {AppConfig} from '../app.config';
 import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -15,7 +16,7 @@ export class RegistrationComponent implements OnInit {
   confirmPassword: string;
   result: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -28,6 +29,7 @@ export class RegistrationComponent implements OnInit {
         this.result = data;
         if(this.result === "saved"){
           alert('Uw account is opgeslagen!');
+          this.router.navigate(['/login']);
         }
       }, error => console.log('oops', error) );
     } else {

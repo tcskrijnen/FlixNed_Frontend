@@ -5,9 +5,9 @@
     <div class="col-sm col-md-8">
       <div class="registrationform">
         <h2>Registratie</h2>
-        <input [(ngModel)]="email" placeholder="Email" />
-        <input [(ngModel)]="password" placeholder="Wachtwoord" />
-        <input [(ngModel)]="confirmPassword" placeholder="Bevestig wachtwoord" />
+        <input type="text" [(ngModel)]="email" placeholder="Email" />
+        <input type="password" [(ngModel)]="password" placeholder="Wachtwoord" />
+        <input type="password"  [(ngModel)]="confirmPassword" placeholder="Bevestig wachtwoord" />
         <div>
           <button class="btn btn-primary"(click)="register()">Registreer</button>
         </div>
