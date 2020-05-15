@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm col-md-8">
+      <div class="registrationform">
+        <h2>Registratie</h2>
+        <input [(ngModel)]="email" placeholder="Email" />
+        <input [(ngModel)]="password" placeholder="Wachtwoord" />
+        <input [(ngModel)]="confirmPassword" placeholder="Bevestig wachtwoord" />
+        <div>
+          <button class="btn btn-primary"(click)="register()">Registreer</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>
