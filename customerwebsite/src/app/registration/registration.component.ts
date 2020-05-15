@@ -26,6 +26,9 @@ export class RegistrationComponent implements OnInit {
       const url = `${AppConfig.ApiBaseURL}${AppConfig.ApiUrls.REGISTER}`;
       this.http.post(url, this.customer).subscribe((data: string) => {
         this.result = data;
+        if(this.result === "saved"){
+          alert('Uw account is opgeslagen!');
+        }
       }, error => console.log('oops', error) );
     } else {
       alert('Make sure passwords match.');
