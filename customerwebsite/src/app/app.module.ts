@@ -8,13 +8,15 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
+import { StreamcontentComponent } from './streamcontent/streamcontent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    HomeComponent
+    HomeComponent,
+    StreamcontentComponent
   ],
   imports: [
     BrowserModule,
