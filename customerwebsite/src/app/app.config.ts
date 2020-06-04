@@ -4,7 +4,9 @@ export class AppConfig {
 
   static ApiUrls = {
     LOGIN: '/login',
-    REGISTER: '/customer/register'
+    REGISTER: '/customer/register',
+    GETALLSERIES: '/content/serie/all',
+    GETALLMOVIES: '/content/movie/all'
   };
   static LocalStorageKeys = {
     TOKEN: 'token',
