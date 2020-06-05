@@ -1,1 +1,22 @@
-<p>home works!</p>
+<div class="container">
+  <div class="row contenttypeblock">
+      <h2>Movie</h2>
+  </div>
+  <div class="row">
+    <div class="col-sm" *ngFor="let movie of movies">
+      {{movie.title}}
+      {{movie.year}}
+      {{movie.duration}}
+    </div>
+  </div>
+  <div class="row contenttypeblock">
+    <h2>Serie</h2>
+  </div>
+  <div class="row">
+    <div class="col-sm" *ngFor="let serie of series">
+      {{serie.title}}
+      {{serie.year}}
+      {{serie.duration}}
+    </div>
+  </div>
+</div>
