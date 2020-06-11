@@ -10,6 +10,7 @@ import {Serie} from '../../models/serie';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss']
 })
+
 export class ContentComponent implements OnInit {
 
   serieId: string;
@@ -26,16 +27,18 @@ export class ContentComponent implements OnInit {
 
       if (data.serieId === data.serieId){
         this.serieId = data.serieId.toString();
+        this.getSerie();
       }
       else{
         this.movieId = data.movieId.toString();
+        this.getMovie();
       }
     });
   }
 
   getMovie(): void {
     this.http
-      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.GETMOVIE)
+      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.GETMOVIE + '?movieId=' + this.movieId)
       .subscribe((data: Movie) => {
         this.movie = data;
         console.log(this.movie);
@@ -44,11 +47,10 @@ export class ContentComponent implements OnInit {
 
   getSerie(): void {
     this.http
-      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.GETSERIE)
+      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.GETSERIE + '?serieId=' + this.serieId)
       .subscribe((data: Serie) => {
         this.serie = data;
         console.log(this.serie);
       }, error => console.log('oops', error) );
   }
-
 }

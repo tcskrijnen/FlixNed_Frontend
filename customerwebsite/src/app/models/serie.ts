@@ -3,7 +3,7 @@ export class Serie {
   serieId: string;
   title: string;
   description: string;
-  episodeTitle: string;
+  episodeName: string;
   episode: string;
   season: string;
   year: string;
@@ -12,12 +12,12 @@ export class Serie {
   imageUrl: string;
 
 
-  constructor(id, serieId, title, description, episodeTitle, episode, season, year, duration, cast, imageUrl){
+  constructor(id, serieId, title, description, episodeName, episode, season, year, duration, cast, imageUrl){
     this.id = id;
     this.title = title;
     this.description = description;
     this.serieId = serieId;
-    this.episodeTitle = episodeTitle;
+    this.episodeName = episodeName;
     this.episode = episode;
     this.season = season;
     this.year = year;

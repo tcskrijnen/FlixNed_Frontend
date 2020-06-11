@@ -1,1 +1,21 @@
-<p>content works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm col-md-8">
+      <div class="">
+        <div class="" *ngIf="serie != null">
+          <img src="{{serie.imageUrl}}" width="200px">
+          <h2>{{ serie.title }}</h2>
+          <p>Season: {{ serie.season }}</p>
+          <p>Episode: {{ serie.episode }}</p>
+          <p><b>{{ serie.episodeName }}</b></p>
+          <p>{{ serie.description }}</p>
+          <p>Cast: {{ serie.cast }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>
