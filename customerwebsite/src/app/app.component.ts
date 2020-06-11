@@ -16,7 +16,7 @@ export class AppComponent {
     private router: Router,
     private authService: AuthenticationService,
   ) {
-    this.subscribeEvents();
+    //this.subscribeEvents();
   }
 
   subscribeEvents(): void {

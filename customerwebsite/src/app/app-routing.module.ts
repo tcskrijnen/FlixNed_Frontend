@@ -4,6 +4,7 @@ import { LoginComponent} from './login/login.component';
 import { RegistrationComponent} from './registration/registration.component';
 import {HomeComponent} from './home/home.component';
 import {StreamcontentComponent} from './streamcontent/streamcontent.component';
+import {ContentComponent} from './home/content/content.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registratie', component: RegistrationComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'home/content', component: ContentComponent },
   { path: 'stream', component: StreamcontentComponent }
 ];
 

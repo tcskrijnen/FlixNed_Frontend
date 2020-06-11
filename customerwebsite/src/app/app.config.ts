@@ -6,7 +6,9 @@ export class AppConfig {
     LOGIN: '/login',
     REGISTER: '/customer/register',
     GETALLSERIES: '/content/serie/all',
-    GETALLMOVIES: '/content/movie/all'
+    GETALLMOVIES: '/content/movie/all',
+    GETMOVIE: '/content/movie/getMovie',
+    GETSERIE: '/content/serie/getSerie'
   };
   static LocalStorageKeys = {
     TOKEN: 'token',

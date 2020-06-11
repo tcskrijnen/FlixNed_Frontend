@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { StreamcontentComponent } from './streamcontent/streamcontent.component';
+import { ContentComponent } from './home/content/content.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { StreamcontentComponent } from './streamcontent/streamcontent.component'
     LoginComponent,
     RegistrationComponent,
     HomeComponent,
-    StreamcontentComponent
+    StreamcontentComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
