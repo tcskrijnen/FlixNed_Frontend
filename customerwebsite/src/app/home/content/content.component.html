@@ -12,6 +12,7 @@
           <p><b>{{ serie.episodeName }}</b></p>
           <p>{{ serie.description }}</p>
           <p>Cast: {{ serie.cast }}</p>
+          <button [routerLink]="['/home/content/stream']" [queryParams]="{contentId: serie.serieId}">Watch</button>
         </div>
       </div>
     </div>

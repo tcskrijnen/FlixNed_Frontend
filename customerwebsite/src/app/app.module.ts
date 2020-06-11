@@ -10,6 +10,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { StreamcontentComponent } from './streamcontent/streamcontent.component';
 import { ContentComponent } from './home/content/content.component';
+import { StreamComponent } from './home/content/stream/stream.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,14 @@ import { ContentComponent } from './home/content/content.component';
     RegistrationComponent,
     HomeComponent,
     StreamcontentComponent,
-    ContentComponent
+    ContentComponent,
+    StreamComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

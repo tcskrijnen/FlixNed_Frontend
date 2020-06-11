@@ -8,7 +8,8 @@ export class AppConfig {
     GETALLSERIES: '/content/serie/all',
     GETALLMOVIES: '/content/movie/all',
     GETMOVIE: '/content/movie/getMovie',
-    GETSERIE: '/content/serie/getSerie'
+    GETSERIE: '/content/serie/getSerie',
+    GETSTREAM: '/stream/getStream'
   };
   static LocalStorageKeys = {
     TOKEN: 'token',
