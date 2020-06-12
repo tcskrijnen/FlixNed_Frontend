@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { StreamcontentComponent } from './streamcontent/streamcontent.component';
 import { ContentComponent } from './home/content/content.component';
 import { StreamComponent } from './home/content/stream/stream.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StreamComponent } from './home/content/stream/stream.component';
     HomeComponent,
     StreamcontentComponent,
     ContentComponent,
-    StreamComponent
+    StreamComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
