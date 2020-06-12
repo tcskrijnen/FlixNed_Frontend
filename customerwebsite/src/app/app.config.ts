@@ -5,6 +5,7 @@ export class AppConfig {
   static ApiUrls = {
     LOGIN: '/login',
     REGISTER: '/customer/register',
+    GETUSER: '/customer/user/getUserByEmail',
     GETALLSERIES: '/content/serie/all',
     GETALLMOVIES: '/content/movie/all',
     GETMOVIE: '/content/movie/getMovie',

@@ -4,6 +4,7 @@ import { Observable, of, BehaviorSubject, from } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { AppConfig } from '../app.config';
 import { CookieService } from 'ngx-cookie-service';
+import {User} from '../models/user';
 
 @Injectable({
   providedIn: 'root',
@@ -27,6 +28,7 @@ export class AuthenticationService {
           if (token) {
             // localStorage.setItem(AppConfig.LocalStorageKeys.TOKEN, token);
             this.cookieService.set('authorization-key', token);
+            this.setUserId(email);
           }
           this.isLoggedIn.next(!!token);
         },
@@ -50,6 +52,14 @@ export class AuthenticationService {
   // * Logout */
   public logOut(): void {
     this.isLoggedIn.next(false);
+  }
+
+  setUserId(email: string) {
+    this.http
+      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.GETUSER + '?email=' + email)
+      .subscribe((data: User) => {
+        this.cookieService.set('userId', data.id);
+      }, error => console.log('oops', error) );
   }
 
   /**

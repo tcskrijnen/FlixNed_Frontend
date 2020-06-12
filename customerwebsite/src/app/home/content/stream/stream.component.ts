@@ -33,7 +33,8 @@ export class StreamComponent implements OnInit {
         this.streamUrl = data.url;
         console.log(this.streamUrl);
 
-        window.open(this.streamUrl, 'CNN_WindowName');
+        window.open(this.streamUrl, 'WindowName');
+
       }, error => console.log('oops', error) );
   }
 

@@ -53,4 +53,14 @@ export class ContentComponent implements OnInit {
         console.log(this.serie);
       }, error => console.log('oops', error) );
   }
+
+  addToPlaylist(): void {
+    this.http
+      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.GETSERIE + '?serieId=' + this.serieId)
+      .subscribe((data: Serie) => {
+        this.serie = data;
+        console.log(this.serie);
+      }, error => console.log('oops', error) );
+  }
+
 }
