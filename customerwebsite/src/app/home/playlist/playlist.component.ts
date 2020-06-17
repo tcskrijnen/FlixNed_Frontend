@@ -26,7 +26,7 @@ export class PlaylistComponent implements OnInit {
         this.cookieService.get('userId'))
       .subscribe((data: Playlist) => {
         this.playlist = data;
-        console.log(this.playlist.serieList);
+        console.log(this.playlist);
       }, error => console.log('oops', error) );
   }
 
