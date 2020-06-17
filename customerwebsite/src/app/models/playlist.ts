@@ -1,9 +1,12 @@
-export class Playlist {
-  series = new Map();
-  movies = new Map();
+import {Serie} from './serie';
+import {Movie} from './movie';
 
-  constructor(series, movies){
-    this.series = series;
-    this.movies = movies;
+export class Playlist {
+  serieList: Serie[];
+  movieList: Movie[];
+
+  constructor(serieList, movieList){
+    this.serieList = serieList;
+    this.movieList = movieList;
   }
 }
