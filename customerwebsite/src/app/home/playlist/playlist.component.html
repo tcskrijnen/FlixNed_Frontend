@@ -3,16 +3,20 @@
     <h2>Movie</h2>
   </div>
   <div class="row">
-    <div class="col-sm" *ngFor="let movie of playlist.movieList">
-      <a [routerLink]="['/home/content/']" [queryParams]="{movieId: movie.movieId}">{{movie.title}}</a>
+    <div *ngIf="playlist != null">
+      <div class="col-sm" *ngFor="let movie of playlist.movieList">
+        <a [routerLink]="['/home/content/']" [queryParams]="{movieId: movie.movieId}">{{movie.title}}</a>
+      </div>
     </div>
   </div>
   <div class="row contenttypeblock">
     <h2>Serie</h2>
   </div>
   <div class="row">
-    <div class="col-sm" *ngFor="let serie of playlist.serieList">
-      <a [routerLink]="['/home/content/']" [queryParams]="{serieId: serie.serieId}">{{serie.title}}</a>
+    <div *ngIf="playlist != null">
+      <div class="col-sm" *ngFor="let serie of playlist.serieList">
+        <a [routerLink]="['/home/content/']" [queryParams]="{serieId: serie.serieId}">{{serie.title}}</a>
+      </div>
     </div>
   </div>
 </div>
