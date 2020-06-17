@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {AppConfig} from '../../app.config';
 import {Movie} from '../../models/movie';
 import {HttpClient} from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 import {Serie} from '../../models/serie';
 
 @Component({
@@ -19,7 +20,7 @@ export class ContentComponent implements OnInit {
   movie: Movie;
   serie: Serie;
 
-  constructor(private activatedroute: ActivatedRoute, private http: HttpClient) { }
+  constructor(private activatedroute: ActivatedRoute, private http: HttpClient,  private cookieService: CookieService) { }
 
   ngOnInit(): void {
     this.activatedroute.queryParams.subscribe(data => {
@@ -49,6 +50,7 @@ export class ContentComponent implements OnInit {
     this.http
       .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.GETSERIE + '?serieId=' + this.serieId)
       .subscribe((data: Serie) => {
+        console.log();
         this.serie = data;
         console.log(this.serie);
       }, error => console.log('oops', error) );
@@ -56,7 +58,7 @@ export class ContentComponent implements OnInit {
 
   addSerieToPlaylist(): void {
     this.http
-      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.ADDSERIETOPLAYLIST + '?userId=1' + '&serieId=' +  this.serieId)
+      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.ADDSERIETOPLAYLIST + '?userId=' + this.cookieService.get('userId') + '&serieId=' +  this.serieId )
       .subscribe((data: Serie) => {
         this.serie = data;
         console.log(this.serie);
@@ -65,7 +67,7 @@ export class ContentComponent implements OnInit {
 
   addMovieToPlaylist(): void {
     this.http
-      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.ADDMOVIETOPLAYLIST + '?userId=1' + '&movieId=' + this.movieId)
+      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.ADDMOVIETOPLAYLIST + '?userId=' + this.cookieService.get('userId') + '&movieId=' + this.movieId)
       .subscribe((data: Serie) => {
         this.serie = data;
         console.log(this.serie);
