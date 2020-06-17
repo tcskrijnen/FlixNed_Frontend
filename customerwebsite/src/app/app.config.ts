@@ -8,6 +8,7 @@ export class AppConfig {
     GETUSER: '/customer/user/getUserByEmail',
     GETALLSERIES: '/content/serie/all',
     GETALLMOVIES: '/content/movie/all',
+    GETPLAYLIST: '/content/playlist/getPlaylist',
     GETMOVIE: '/content/movie/getMovie',
     GETSERIE: '/content/serie/getSerie',
     GETSTREAM: '/stream/getStream',

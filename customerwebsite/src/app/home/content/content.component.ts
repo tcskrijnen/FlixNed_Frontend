@@ -58,7 +58,8 @@ export class ContentComponent implements OnInit {
 
   addSerieToPlaylist(): void {
     this.http
-      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.ADDSERIETOPLAYLIST + '?userId=' + this.cookieService.get('userId') + '&serieId=' +  this.serieId )
+      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.ADDSERIETOPLAYLIST + '?userId=' +
+        this.cookieService.get('userId') + '&serieId=' +  this.serieId )
       .subscribe((data: Serie) => {
         this.serie = data;
         console.log(this.serie);
@@ -67,7 +68,8 @@ export class ContentComponent implements OnInit {
 
   addMovieToPlaylist(): void {
     this.http
-      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.ADDMOVIETOPLAYLIST + '?userId=' + this.cookieService.get('userId') + '&movieId=' + this.movieId)
+      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.ADDMOVIETOPLAYLIST + '?userId=' +
+        this.cookieService.get('userId') + '&movieId=' + this.movieId)
       .subscribe((data: Serie) => {
         this.serie = data;
         console.log(this.serie);

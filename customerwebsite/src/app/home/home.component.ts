@@ -3,6 +3,8 @@ import {AppConfig} from '../app.config';
 import {HttpClient} from '@angular/common/http';
 import {Movie} from '../models/movie';
 import {Serie} from '../models/serie';
+import {Playlist} from '../models/Playlist';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-home',
@@ -13,13 +15,14 @@ export class HomeComponent implements OnInit {
 
   movies: Movie[];
   series: Serie[];
+  playlist: Playlist;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cookieService: CookieService) { }
 
   ngOnInit(): void {
     this.getAllMovies();
     this.getAllSeries();
-    //this.getPlayList();
+    this.getPlayList();
   }
 
   getAllMovies(): void {
@@ -37,6 +40,15 @@ export class HomeComponent implements OnInit {
       .subscribe((data: Array<Serie>) => {
         this.series = data;
         console.log(this.series);
+      }, error => console.log('oops', error) );
+  }
+
+  getPlayList(): void {
+    this.http
+      .get(AppConfig.ApiBaseURL + AppConfig.ApiUrls.GETPLAYLIST + '?userId=' + this.cookieService.get('userId'))
+      .subscribe((data: Playlist) => {
+        this.playlist = data;
+        console.log(this.playlist);
       }, error => console.log('oops', error) );
   }
 
