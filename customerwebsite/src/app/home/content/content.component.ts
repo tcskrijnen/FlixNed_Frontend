@@ -20,7 +20,7 @@ export class ContentComponent implements OnInit {
   movie: Movie;
   serie: Serie;
 
-  constructor(private activatedroute: ActivatedRoute, private http: HttpClient,  private cookieService: CookieService) { }
+  constructor(private activatedroute: ActivatedRoute, private http: HttpClient, private cookieService: CookieService) { }
 
   ngOnInit(): void {
     this.activatedroute.queryParams.subscribe(data => {
