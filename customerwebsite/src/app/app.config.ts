@@ -6,6 +6,7 @@ export class AppConfig {
     LOGIN: '/login',
     REGISTER: '/customer/register',
     GETUSER: '/customer/user/getUserByEmail',
+    GETUSERBYID: '/customer/user/getUserById',
     GETALLSERIES: '/content/serie/all',
     GETALLMOVIES: '/content/movie/all',
     GETPLAYLIST: '/content/playlist/getPlaylist',
